@@ -1,0 +1,41 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    18:53:34 08/05/2021 
+// Design Name: 
+// Module Name:    Basic_Gate_Implementation 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Basic_Gate_Implementation(
+input A,
+input B,
+output Y1,
+output Y2,
+output Y3,
+output Y4,
+output Y5,
+output Y6,
+output Y7
+    );
+
+assign Y1=A|B;
+assign Y2=A&B;
+assign Y3=~A;
+assign Y4=~(A|B);
+assign Y5=~(A&B);
+assign Y6=A^B;
+assign Y7=~(A^B);
+
+endmodule
