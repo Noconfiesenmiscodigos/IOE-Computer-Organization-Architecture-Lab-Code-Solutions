@@ -1,0 +1,41 @@
+{    "title": "Computer Organization and Architecture (COA) Lab",
+     "description" : "IOE pulchowk Computer Organization and Architecture lab question and answer",
+     "repo" : "COA",
+     "labs" : [
+         {
+             "no": 1,
+             "description" : "lab1",
+             "files":[
+                 {
+                     "no": "1",
+                     "src":"lab1/fourbitadder.m",
+                     "description":"Four bit binary adder"
+                 }
+             ]
+         },
+         {
+             "no": 2,
+             "description" : "lab2",
+             "files":[
+                 {
+                     "no": 1,
+                     "src":"lab2/fourbitsubtracter.m",
+                     "description":"Four bit binary adder and subtractor"
+                 }
+             ]
+         },
+         
+         {
+             "no": 3,
+             "description" : "lab3",
+             "files":[
+                 {
+                     "no":3,
+                     "src":"lab3/multiplier.m",
+                     "description":"Multiplication of two binary numbers"
+                 }
+             ]
+         }
+     ]
+}
+
