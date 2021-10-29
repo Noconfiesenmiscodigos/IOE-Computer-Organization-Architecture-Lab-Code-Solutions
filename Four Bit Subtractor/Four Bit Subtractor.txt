@@ -1,0 +1,40 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    11:46:54 10/29/2021 
+// Design Name: 
+// Module Name:    Four_Bit_Subtractor 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Four_Bit_Subtractor(
+input [3:0] A,
+input [3:0] B,
+input M,
+input Cin,
+output [3:0] S,
+output Cout
+);
+
+wire C0 , C1 , C2, B0,B1,B2,B3;
+xor g0(B0, B[0],M);
+xor g1(B1, B[1],M);
+xor g2(B2, B[2],M);
+xor g3(B3, B[3],M);
+Full_Adder fa1(A[0] , B0 , Cin , S[0] , C0 ); 
+Full_Adder fa2(A[1] , B1 , C0 , S[1] , C1);
+Full_Adder fa3(A[2] , B2 , C1 , S[2] , C2);
+Full_Adder fa4(A[3] , B3 , C2 , S[3] , Cout);
+
+endmodule
