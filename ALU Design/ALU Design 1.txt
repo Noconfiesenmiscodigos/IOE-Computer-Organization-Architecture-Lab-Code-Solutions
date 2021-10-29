@@ -1,0 +1,92 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    12:40:46 10/29/2021 
+// Design Name: 
+// Module Name:    ALU_Design 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module ALU_Design(a, b, s, yout, cf);
+
+input [3:0] a;
+wire [3:0] a;  
+input [3:0] b;
+ wire [3:0] b; 
+input [2:0] s;
+ wire [2:0] s; 
+output [3:0] yout;
+ reg [3:0] yout;
+ output cf; 
+reg cf;
+ reg [4:0] temp; 
+ 
+always @ ( a,b,s )
+  begin       
+ if ( s  == 3'b000)
+  begin                    
+temp = {0,a} + {0,b};     
+yout = temp [3:0];                    
+cf = temp [4];   
+end       
+else if ( s == 3'b001)          
+begin                   
+temp = {0,a} - {0,b};                   
+yout = temp [3:0];                  
+cf = temp [4];            
+end      
+else if ( s == 3'b010)          
+begin                    
+temp = {0,a} + 5'b00001;                  
+yout = temp [3:0];                  
+cf = temp [4];          
+end 
+
+else if ( s == 3'b011)          
+begin                  
+temp = {0,a} - 5'b00001;                 
+yout = temp [3:0];                 
+cf = temp [4];          
+end      
+else if ( s == 3'b100)          
+begin                 
+temp = a | b;                 
+yout = temp [3:0];                 
+cf = temp [4];          
+end 
+else if ( s == 3'b101)          
+begin                
+temp = a  & b;                
+yout = temp [3:0];                
+cf = temp [4];          
+end      
+
+else if ( s == 3'b110)          
+begin                 
+temp = a ^ b;                
+yout = temp [3:0];               
+cf = temp [4];          
+end     
+else if (s == 3'b111)          
+begin 
+   temp = ~a;               
+yout = temp [3:0];               
+cf = temp [4];          
+end  
+end 
+
+endmodule  
+ 
+
+

@@ -1,0 +1,79 @@
+`timescale 1ns / 1ps
+
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
+//
+// Create Date:   12:44:40 10/29/2021
+// Design Name:   ALU_Design
+// Module Name:   D:/Lab 6/TF.v
+// Project Name:  Lab6
+// Target Device:  
+// Tool versions:  
+// Description: 
+//
+// Verilog Test Fixture created by ISE for module: ALU_Design
+//
+// Dependencies:
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+module TF;
+
+	// Inputs
+	reg [3:0] a;
+	reg [3:0] b;
+	reg [2:0] s;
+
+	// Outputs
+	wire [3:0] yout;
+	wire cf;
+
+	// Instantiate the Unit Under Test (UUT)
+	ALU_Design uut (
+		.a(a), 
+		.b(b), 
+		.s(s), 
+		.yout(yout), 
+		.cf(cf)
+	);
+
+	initial begin
+		// Initialize Inputs
+		a = 0;
+		b = 0;
+		s = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		// Add stimulus here
+		a = 0;
+		b = 0;
+		s = 0;
+		#100;
+		a=5;
+		b=6;
+		s=1;
+		#100;
+		a=5;
+		b=6;
+		s=2;
+		#100;
+		a=5;
+		b=6;
+		s=3;
+		#100;
+		a=5;
+		b=6;
+		s=4;
+		#100;
+
+	end
+      
+endmodule
+
