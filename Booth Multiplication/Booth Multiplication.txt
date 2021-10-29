@@ -1,0 +1,54 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    14:05:04 10/29/2021 
+// Design Name: 
+// Module Name:    Booth_Multiplication 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Booth_Multiplication(X, Y, Z);
+input signed [3:0] X, Y;
+       output signed [7:0] Z;
+       reg signed [7:0] Z;
+       reg  [1:0] temp;
+       integer i;
+       reg E1;
+       reg signed [3:0] Y1;
+       always @ (X, Y)
+       begin
+       Z[7:4] = 4'd0;
+		 Z[3:0]=X;
+       E1 = 1'd0;
+		 Y1 = - Y;
+       for (i = 0; i < 4; i = i + 1)
+       begin
+       temp = {X[i], E1};
+  case (temp)
+       2'd2 : Z [7 : 4] = Z [7 : 4] + Y1;
+       2'd1 : Z [7 : 4] = Z [7 : 4] + Y;
+       default : begin end
+       endcase
+       Z = Z >> 1;
+       
+       Z[7] = Z[6];
+       
+      
+       E1 = X[i];
+           end
+			 
+       end
+      
+       
+endmodule
