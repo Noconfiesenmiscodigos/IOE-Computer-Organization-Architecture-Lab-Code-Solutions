@@ -1,0 +1,59 @@
+`timescale 1ns / 1ps
+
+////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer:
+//
+// Create Date:   11:09:56 10/29/2021
+// Design Name:   Four_Bit_Adder
+// Module Name:   D:/Lab4/Fba.v
+// Project Name:  Lab4
+// Target Device:  
+// Tool versions:  
+// Description: 
+//
+// Verilog Test Fixture created by ISE for module: Four_Bit_Adder
+//
+// Dependencies:
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+module Fba;
+
+	// Inputs
+	reg [3:0] A;
+	reg [3:0] B;
+	reg C0;
+
+	// Outputs
+	wire [3:0] S;
+	wire C4;
+
+	// Instantiate the Unit Under Test (UUT)
+	Four_Bit_Adder uut (
+		.A(A), 
+		.B(B), 
+		.C0(C0), 
+		.S(S), 
+		.C4(C4)
+	);
+
+	initial begin
+		// Initialize Inputs
+		A = 0;
+		B = 0;
+		C0 = 0;
+
+		// Wait 100 ns for global reset to finish
+		#100;
+        
+		// Add stimulus here
+
+	end
+      
+endmodule
+
