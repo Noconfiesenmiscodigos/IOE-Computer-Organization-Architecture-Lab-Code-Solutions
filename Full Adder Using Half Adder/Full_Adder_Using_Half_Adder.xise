@@ -1,0 +1,34 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    09:52:28 10/29/2021 
+// Design Name: 
+// Module Name:    Full_Adder_Using_Half_Adder 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Full_Adder_Using_Half_Adder(
+input A,
+input B,
+input Cin,
+output S,
+output Cout
+);
+
+wire S1 , C1 , C2;
+Half_Adder_1 ha1(A , B , S1 , C1);
+Half_Adder_2 ha2(S1 , Cin , S , C2);
+or g1(Cout , C1 , C2);
+
+endmodule
