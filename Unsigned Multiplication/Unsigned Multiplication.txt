@@ -1,0 +1,43 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date:    13:48:15 10/29/2021 
+// Design Name: 
+// Module Name:    Unsigned_Multiplication 
+// Project Name: 
+// Target Devices: 
+// Tool versions: 
+// Description: 
+//
+// Dependencies: 
+//
+// Revision: 
+// Revision 0.01 - File Created
+// Additional Comments: 
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Unsigned_Multiplication(M,Q,P);
+    input[3:0] M; 
+	 input[3:0] Q;
+	 output [7:0] P;
+	 reg [7:0] P;
+	 reg Q0;
+	 
+integer count;
+always @(M,Q)
+begin
+P[7:4]=4'b0;
+P[3:0]=Q;
+for(count=0; count < 4; count=count+1)
+begin
+case (P[0])
+1: P[7:4]=P[7:4]+M;
+default : begin end
+       endcase
+		 P=P>>1;
+end
+end
+endmodule
+
